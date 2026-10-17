@@ -1,521 +1,194 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bhanu ka Baddy ❤️</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhanuwa's Baddy ❤️</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .script-font { font-family: 'Dancing Script', cursive; }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --pink: #ff6b9d;
-            --light-pink: #ffe0eb;
-            --purple: #a78bfa;
-            --dark: #4b244a;
-        }
-
-        body {
-            min-height: 100vh;
-            font-family: 'Poppins', sans-serif;
-            color: white;
-            background: linear-gradient(
-                135deg,
-                #2b1638,
-                #702c59,
-                #b34d78,
-                #53316d
-            );
-            background-size: 300% 300%;
-            animation: gradient 12s ease infinite;
-            overflow-x: hidden;
-        }
-
-        @keyframes gradient {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .page {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 45px 20px;
-            overflow: hidden;
-        }
-
-        .glow {
-            position: absolute;
-            width: 320px;
-            height: 320px;
-            background: #ff75ad;
-            filter: blur(130px);
-            opacity: 0.25;
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .glow-one {
-            top: -100px;
-            left: -100px;
-        }
-
-        .glow-two {
-            right: -100px;
-            bottom: -100px;
-            background: #b59aff;
-        }
-
-        .card {
-            width: 100%;
-            max-width: 720px;
-            padding: 48px 35px;
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.075);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 28px;
-            backdrop-filter: blur(18px);
-            box-shadow: 0 25px 80px rgba(20, 5, 30, 0.2);
-            animation: appear 1s ease;
-        }
-
-        @keyframes appear {
-            from {
-                opacity: 0;
-                transform: translateY(25px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .heart-icon {
-            font-size: 38px;
-            display: inline-block;
-            animation: heartbeat 1.5s infinite;
-        }
-
-        @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            15% { transform: scale(1.18); }
-            30% { transform: scale(1); }
-            45% { transform: scale(1.12); }
-        }
-
-        .eyebrow {
-            margin-top: 16px;
-            font-size: 11px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: #ffd1e3;
-        }
-
-        h1 {
-            font-family: 'Dancing Script', cursive;
-            font-size: clamp(45px, 8vw, 76px);
-            line-height: 1.15;
-            font-weight: 700;
-            margin: 15px 0;
-        }
-
-        h1 span {
-            color: #ffb4d0;
-        }
-
-        .subtitle {
-            font-size: 14px;
-            color: #f6dce9;
-            line-height: 1.9;
-            max-width: 470px;
-            margin: 0 auto;
-        }
-
-        .birthday-date {
-            margin: 28px 0 24px;
-            font-size: 15px;
-            font-weight: 500;
-            letter-spacing: 2px;
-            color: #ffd0e2;
-        }
-
-        .countdown {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 12px;
-            max-width: 540px;
-            margin: 0 auto;
-        }
-
-        .time-box {
-            padding: 22px 8px;
-            border-radius: 18px;
-            background: rgba(255, 255, 255, 0.10);
-            border: 1px solid rgba(255, 255, 255, 0.16);
-            transition: transform 0.3s, background 0.3s;
-        }
-
-        .time-box:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.16);
-        }
-
-        .number {
-            display: block;
-            font-size: clamp(27px, 5vw, 42px);
-            line-height: 1.2;
-            font-weight: 600;
-            color: white;
-            font-variant-numeric: tabular-nums;
-        }
-
-        .label {
-            display: block;
-            margin-top: 9px;
-            font-size: 10px;
-            letter-spacing: 2px;
-            color: #ffd0e2;
-            text-transform: uppercase;
-        }
-
-        .message {
-            margin: 32px auto 0;
-            max-width: 460px;
-            font-family: 'Dancing Script', cursive;
-            font-size: 28px;
-            color: #ffe0ed;
-        }
-
-        .surprise-btn {
-            margin-top: 26px;
-            padding: 14px 28px;
-            border: none;
-            border-radius: 50px;
-            background: linear-gradient(135deg, #ff8db7, #ffb9d1);
-            color: #52213f;
-            font-family: 'Poppins', sans-serif;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 8px 25px rgba(255, 107, 157, 0.2);
-            transition: transform 0.25s, box-shadow 0.25s;
-        }
-
-        .surprise-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(255, 107, 157, 0.35);
-        }
-
-        .footer {
-            margin-top: 28px;
-            color: #e9c8db;
-            font-size: 11px;
-            letter-spacing: 1px;
-        }
-
-        .floating-heart {
-            position: fixed;
-            bottom: -40px;
-            z-index: 1;
-            color: #ffc3dc;
-            opacity: 0;
-            pointer-events: none;
-            animation: float-up linear forwards;
-        }
-
-        @keyframes float-up {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 0;
-            }
-            15% { opacity: 0.6; }
-            85% { opacity: 0.4; }
-            100% {
-                transform: translateY(-115vh) rotate(35deg);
-                opacity: 0;
-            }
-        }
-
-        .surprise {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 10;
-            align-items: center;
-            justify-content: center;
-            padding: 22px;
-            background: rgba(24, 9, 29, 0.88);
-            backdrop-filter: blur(12px);
-        }
-
-        .surprise.show {
-            display: flex;
-        }
-
-        .surprise-content {
-            max-width: 480px;
-            width: 100%;
-            padding: 38px 28px;
-            text-align: center;
-            background: linear-gradient(145deg, #713b68, #402448);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 25px;
-            animation: appear 0.5s ease;
-        }
-
-        .surprise-content h2 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 48px;
-            color: #ffb6d2;
-            margin: 14px 0;
-        }
-
-        .surprise-content p {
-            color: #f8dfec;
-            font-size: 14px;
-            line-height: 2;
-        }
-
-        .close-btn {
-            margin-top: 25px;
-            padding: 11px 24px;
-            border: 1px solid #ffc3dc;
-            border-radius: 30px;
-            background: transparent;
-            color: white;
-            cursor: pointer;
-            font-family: inherit;
-        }
-
-        @media (max-width: 480px) {
-            .page {
-                padding: 24px 14px;
-            }
-
-            .card {
-                padding: 35px 17px;
-                border-radius: 23px;
-            }
-
-            .countdown {
-                gap: 7px;
-            }
-
-            .time-box {
-                padding: 18px 4px;
-                border-radius: 13px;
-            }
-
-            .label {
-                font-size: 8px;
-                letter-spacing: 1px;
-            }
-
-            .subtitle {
-                font-size: 12px;
-            }
-
-            .message {
-                font-size: 25px;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                scroll-behavior: auto !important;
-            }
-        }
-    </style>
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      15% { transform: scale(1.18); }
+      30% { transform: scale(1); }
+      45% { transform: scale(1.12); }
+    }
+    @keyframes float-up {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+      15% { opacity: .6; }
+      85% { opacity: .4; }
+      100% { transform: translateY(-115vh) rotate(35deg); opacity: 0; }
+    }
+    .animate-appear { animation: appear 1s ease both; }
+    .animate-heartbeat { animation: heartbeat 1.5s infinite; }
+    .animate-float-up { animation: float-up linear forwards; }
+    .surprise.show { display: flex; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
 </head>
 
-<body>
+<body class="min-h-screen overflow-x-hidden bg-[#09090b] text-white">
+  <main class="relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-8 sm:px-5 sm:py-11">
 
-    <main class="page">
-        <div class="glow glow-one"></div>
-        <div class="glow glow-two"></div>
+    <div class="pointer-events-none absolute -left-24 -top-24 h-80 w-80 rounded-full bg-pink-500/20 blur-[100px]"></div>
+    <div class="pointer-events-none absolute -bottom-24 -right-24 h-80 w-80 rounded-full bg-violet-500/20 blur-[100px]"></div>
 
-        <section class="card">
-            <div class="heart-icon">♡</div>
+    <section class="animate-appear relative z-[2] w-full max-w-3xl rounded-3xl border border-white/15 bg-white/[0.06] px-5 py-9 text-center shadow-2xl shadow-black/30 backdrop-blur-xl sm:px-9 sm:py-12">
+      <div class="animate-heartbeat inline-block text-4xl">♡</div>
 
-            <p class="eyebrow">A little countdown for Mine Bhanuwaa</p>
+      <p class="mt-4 text-[11px] uppercase tracking-[0.25em] text-pink-200">
+        A little countdown for Mine Bhanuwaa
+      </p>
 
-            <h1>Bhanu Day Is <span>Almost Here</span></h1>
+      <h1 class="script-font my-4 text-5xl font-bold leading-tight sm:text-7xl">
+        Bhanu Day Is <span class="text-pink-300">Almost Here</span>
+      </h1>
 
-            <p class="subtitle">
-                The world gave me many beautiful things,
-                but meeting you will always be one of my favourites.
-                And now, your special day is getting closer. ❤️
-                <br>
-                #Bhanuwaa_ka_baddy 
-            </p>
+      <p class="mx-auto max-w-xl text-xs leading-8 text-rose-100/90 sm:text-sm">
+        The world gave me many beautiful things,
+        but meeting you will always be one of my favourites.
+        And now, your special day is getting closer. ❤️
+        <br>
+        #Bhanuwaa_ka_baddy
+      </p>
 
-            <p class="birthday-date">02 · NOVEMBER · 2026</p>
+      <p class="my-7 text-sm font-medium tracking-[0.15em] text-pink-200 sm:text-base">
+        02 · NOVEMBER · 2026
+      </p>
 
-            <div class="countdown" aria-label="Birthday countdown">
-                <div class="time-box">
-                    <span class="number" id="days">00</span>
-                    <span class="label">Days</span>
-                </div>
-
-                <div class="time-box">
-                    <span class="number" id="hours">00</span>
-                    <span class="label">Hours</span>
-                </div>
-
-                <div class="time-box">
-                    <span class="number" id="minutes">00</span>
-                    <span class="label">Minutes</span>
-                </div>
-
-                <div class="time-box">
-                    <span class="number" id="seconds">00</span>
-                    <span class="label">Seconds</span>
-                </div>
-            </div>
-
-            <p class="message" id="message">
-                Here I Counting every moment until your day, my Bubu. 💗
-            </p>
-
-            <button class="surprise-btn" id="surpriseBtn">
-                SOME LINES FOR YOU BABY ♡
-            </button>
-
-            <p class="footer">MADE WITH LOVE, JUST FOR YOU PRIYA</p>
-        </section>
-    </main>
-
-    <div class="surprise" id="surprise">
-        <div class="surprise-content">
-            <div class="heart-icon">💗</div>
-
-            <h2>To My Love Priya</h2>
-
-            <p>
-                If I could give you one thing in this world,
-                it would be the ability to see yourself through my eyes.
-                Then you would understand just how precious you are to me.
-                And how much I love You !
-                <br><br>
-                Your smile makes ordinary days special,
-                and your happiness means more to me than words can say.
-                <br><br>
-                No countdown could measure how much you mean to me.
-                You deserve all the love in the world. ❤️
-            </p>
-
-            <button class="close-btn" id="closeBtn">Keep this love ♡</button>
+      <div class="mx-auto grid max-w-xl grid-cols-4 gap-2 sm:gap-3" aria-label="Birthday countdown">
+        <div class="rounded-2xl border border-white/15 bg-white/[0.07] px-1 py-5 transition duration-300 hover:-translate-y-1 hover:bg-white/10 sm:px-2">
+          <span id="days" class="block text-3xl font-semibold tabular-nums sm:text-[42px]">00</span>
+          <span class="mt-2 block text-[8px] uppercase tracking-widest text-pink-200 sm:text-[10px]">Days</span>
         </div>
+        <div class="rounded-2xl border border-white/15 bg-white/[0.07] px-1 py-5 transition duration-300 hover:-translate-y-1 hover:bg-white/10 sm:px-2">
+          <span id="hours" class="block text-3xl font-semibold tabular-nums sm:text-[42px]">00</span>
+          <span class="mt-2 block text-[8px] uppercase tracking-widest text-pink-200 sm:text-[10px]">Hours</span>
+        </div>
+        <div class="rounded-2xl border border-white/15 bg-white/[0.07] px-1 py-5 transition duration-300 hover:-translate-y-1 hover:bg-white/10 sm:px-2">
+          <span id="minutes" class="block text-3xl font-semibold tabular-nums sm:text-[42px]">00</span>
+          <span class="mt-2 block text-[8px] uppercase tracking-widest text-pink-200 sm:text-[10px]">Minutes</span>
+        </div>
+        <div class="rounded-2xl border border-white/15 bg-white/[0.07] px-1 py-5 transition duration-300 hover:-translate-y-1 hover:bg-white/10 sm:px-2">
+          <span id="seconds" class="block text-3xl font-semibold tabular-nums sm:text-[42px]">00</span>
+          <span class="mt-2 block text-[8px] uppercase tracking-widest text-pink-200 sm:text-[10px]">Seconds</span>
+        </div>
+      </div>
+
+      <p id="message" class="script-font mx-auto mt-8 max-w-lg text-2xl text-pink-100 sm:text-3xl">
+        Here I Counting every moment until your day, my Bubu. 💗
+      </p>
+
+      <button id="surpriseBtn" class="mt-7 rounded-full bg-gradient-to-r from-pink-400 to-rose-200 px-7 py-3.5 text-xs font-semibold text-[#351525] shadow-lg shadow-pink-500/20 transition duration-300 hover:-translate-y-1 hover:shadow-pink-500/30 focus:outline-none focus:ring-2 focus:ring-pink-200 focus:ring-offset-2 focus:ring-offset-zinc-950">
+        SOME LINES FOR YOU BABY ♡
+      </button>
+
+      <p class="mt-7 text-[10px] tracking-widest text-rose-100/70 sm:text-[11px]">
+        MADE WITH LOVE, JUST FOR YOU PRIYA
+      </p>
+    </section>
+  </main>
+
+  <div id="surprise" class="surprise fixed inset-0 z-10 hidden items-center justify-center bg-black/85 p-5 backdrop-blur-md">
+    <div class="animate-appear w-full max-w-lg rounded-3xl border border-white/15 bg-gradient-to-br from-[#27202c] to-[#111014] px-7 py-9 text-center shadow-2xl shadow-pink-950/30">
+      <div class="animate-heartbeat inline-block text-4xl">💗</div>
+      <h2 class="script-font my-4 text-5xl font-bold text-pink-300">To My Love Priya</h2>
+      <p class="text-sm leading-8 text-rose-100/90">
+        If I could give you one thing in this world,
+        it would be the ability to see yourself through my eyes.
+        Then you would understand just how precious you are to me.
+        And how much I love You!
+        <br><br>
+        Your smile makes ordinary days special,
+        and your happiness means more to me than words can say.
+        <br><br>
+        No countdown could measure how much you mean to me.
+        You deserve all the love in the world. ❤️
+      </p>
+      <button id="closeBtn" class="mt-6 rounded-full border border-pink-200 px-6 py-3 text-sm text-white transition hover:bg-pink-300/10 focus:outline-none focus:ring-2 focus:ring-pink-200">
+        Keep this love ♡
+      </button>
     </div>
+  </div>
 
-    <script>
-        // Birthday date: 2 November 2026, midnight in India.
-        const birthday = new Date("2026-11-02T00:00:00+05:30");
+  <script>
 
-        const daysEl = document.getElementById("days");
-        const hoursEl = document.getElementById("hours");
-        const minutesEl = document.getElementById("minutes");
-        const secondsEl = document.getElementById("seconds");
-        const messageEl = document.getElementById("message");
+    const birthday = new Date("2026-11-02T00:00:00+05:30");
 
-        function updateCountdown() {
-            const now = Date.now();
-            const difference = birthday.getTime() - now;
+    const daysEl = document.getElementById("days");
+    const hoursEl = document.getElementById("hours");
+    const minutesEl = document.getElementById("minutes");
+    const secondsEl = document.getElementById("seconds");
+    const messageEl = document.getElementById("message");
 
-            if (difference <= 0) {
-                daysEl.textContent = "00";
-                hoursEl.textContent = "00";
-                minutesEl.textContent = "00";
-                secondsEl.textContent = "00";
+    function updateCountdown() {
+      const difference = birthday.getTime() - Date.now();
 
-                messageEl.textContent =
-                    "Happy Birthday, my love! Today is all about you! 🎂";
+      if (difference <= 0) {
+        daysEl.textContent = "00";
+        hoursEl.textContent = "00";
+        minutesEl.textContent = "00";
+        secondsEl.textContent = "00";
+        messageEl.textContent = "Happy Birthday, my love! Today is all about you! 🎂";
+        document.querySelector("h1").innerHTML = 'Happy Birthday, <span class="text-pink-300">My Love!</span>';
+        document.querySelector(".my-7.text-sm").textContent = "TODAY IS YOUR SPECIAL DAY ❤️";
+        return;
+      }
 
-                document.querySelector("h1").innerHTML =
-                    "Happy Birthday, <span>My Love!</span>";
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((difference / (1000 * 60)) % 60);
+      const seconds = Math.floor((difference / 1000) % 60);
 
-                document.querySelector(".birthday-date").textContent =
-                    "TODAY IS YOUR SPECIAL DAY ❤️";
+      daysEl.textContent = String(days).padStart(2, "0");
+      hoursEl.textContent = String(hours).padStart(2, "0");
+      minutesEl.textContent = String(minutes).padStart(2, "0");
+      secondsEl.textContent = String(seconds).padStart(2, "0");
+    }
 
-                return;
-            }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
 
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor(
-                (difference / (1000 * 60 * 60)) % 24
-            );
-            const minutes = Math.floor(
-                (difference / (1000 * 60)) % 60
-            );
-            const seconds = Math.floor(
-                (difference / 1000) % 60
-            );
+    function createHeart() {
+      const heart = document.createElement("span");
+      heart.className = "animate-float-up pointer-events-none fixed bottom-[-40px] z-[1] text-pink-200/70";
+      heart.textContent = Math.random() > 0.5 ? "♡" : "♥";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (14 + Math.random() * 22) + "px";
+      heart.style.animationDuration = (7 + Math.random() * 6) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 14000);
+    }
+    setInterval(createHeart, 650);
 
-            daysEl.textContent = String(days).padStart(2, "0");
-            hoursEl.textContent = String(hours).padStart(2, "0");
-            minutesEl.textContent = String(minutes).padStart(2, "0");
-            secondsEl.textContent = String(seconds).padStart(2, "0");
-        }
-
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-
-        // Floating hearts
-        function createHeart() {
-            const heart = document.createElement("span");
-            heart.className = "floating-heart";
-            heart.textContent = Math.random() > 0.5 ? "♡" : "♥";
-
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.fontSize = (14 + Math.random() * 22) + "px";
-            heart.style.animationDuration = (7 + Math.random() * 6) + "s";
-
-            document.body.appendChild(heart);
-
-            setTimeout(() => heart.remove(), 14000);
-        }
-
-        setInterval(createHeart, 650);
-
-        // Surprise message
-        const surprise = document.getElementById("surprise");
-
-        document.getElementById("surpriseBtn").addEventListener("click", () => {
-            surprise.classList.add("show");
-        });
-
-        document.getElementById("closeBtn").addEventListener("click", () => {
-            surprise.classList.remove("show");
-        });
-
-        // Close the surprise by clicking outside the card
-        surprise.addEventListener("click", (event) => {
-            if (event.target === surprise) {
-                surprise.classList.remove("show");
-            }
-        });
-
-        // Close the surprise using Escape
-        document.addEventListener("keydown", (event) => {
-            if (event.key === "Escape") {
-                surprise.classList.remove("show");
-            }
-        });
-    </script>
-
+    const surprise = document.getElementById("surprise");
+    document.getElementById("surpriseBtn").addEventListener("click", () => {
+      surprise.classList.add("show");
+    });
+    document.getElementById("closeBtn").addEventListener("click", () => {
+      surprise.classList.remove("show");
+    });
+    surprise.addEventListener("click", (event) => {
+      if (event.target === surprise) surprise.classList.remove("show");
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") surprise.classList.remove("show");
+    });
+  </script>
 </body>
 </html>
